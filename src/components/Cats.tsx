@@ -16,12 +16,14 @@ interface Cats {
   searchQuery: string;
 }
 
+var url: string = "https://freetestapi.com/api/v1/cats"
+
 const Cats: React.FC<Cats> = ({ animalType, searchQuery }) => {
   const [animals, setAnimals] = useState<Animal[]>([]);
   const [selectedAnimal, setSelectedAnimal] = useState<Animal | null>(null);
 
   useEffect(() => {
-    fetch(`https://freetestapi.com/api/v1/cats`)
+    fetch(url)
       .then(response => response.json())
       .then(data => setAnimals(data.animals || data)) 
       .catch(error => console.error('Error fetching data:', error));

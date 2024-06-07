@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({ searchAnimal }) => {
         </nav>
         <nav className="btn-group">
   <button type="button" className="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    Action
+    Animal type
   </button>
   <ul className="dropdown-menu">
         <li>
