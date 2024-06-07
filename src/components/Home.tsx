@@ -2,7 +2,7 @@ function Home() {
     return(
         <>
         <section>
-            <h1>INTERSHIP TEST</h1>
+            <h1>INTERNSHIP TEST</h1>
         </section>
         
         </>
