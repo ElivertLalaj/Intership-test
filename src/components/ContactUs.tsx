@@ -1,15 +1,41 @@
-import React, { useState } from 'react';
-import '../Css/Contact.css'
+import React, { useState, useEffect } from 'react';
+import '../Css/Contact.css';
 
-const ContactUs: React.FC = () => {
+interface ContactMessage {
+  name: string;
+  email: string;
+  message: string;
+}
+
+const ContactForm: React.FC = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
+  useEffect(() => {
+    // Retrieve messages from localStorage
+    const savedMessages = localStorage.getItem('contactMessages');
+    if (savedMessages) {
+      console.log('Saved Messages:', JSON.parse(savedMessages));
+    }
+  }, []);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', { name, email, message });
+
+    const newMessage: ContactMessage = { name, email, message };
+
+    // Retrieve existing messages
+    const savedMessages = localStorage.getItem('contactMessages');
+    const messages = savedMessages ? JSON.parse(savedMessages) : [];
+
+    // Add new message to messages
+    messages.push(newMessage);
+
+    // Save updated messages to localStorage
+    localStorage.setItem('contactMessages', JSON.stringify(messages));
+
     setSubmitted(true);
   };
 
@@ -59,4 +85,4 @@ const ContactUs: React.FC = () => {
   );
 };
 
-export default ContactUs;
+export default ContactForm;
