@@ -14,7 +14,6 @@ const ContactForm: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    // Retrieve messages from localStorage
     const savedMessages = localStorage.getItem('contactMessages');
     if (savedMessages) {
       console.log('Saved Messages:', JSON.parse(savedMessages));
@@ -26,14 +25,11 @@ const ContactForm: React.FC = () => {
 
     const newMessage: ContactMessage = { name, email, message };
 
-    // Retrieve existing messages
     const savedMessages = localStorage.getItem('contactMessages');
     const messages = savedMessages ? JSON.parse(savedMessages) : [];
 
-    // Add new message to messages
     messages.push(newMessage);
 
-    // Save updated messages to localStorage
     localStorage.setItem('contactMessages', JSON.stringify(messages));
 
     setSubmitted(true);
