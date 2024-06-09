@@ -36,6 +36,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
+    <div className='section'>
     <div className="contact-form-container">
       {submitted ? (
         <div className="thank-you-message">
@@ -77,6 +78,7 @@ const ContactForm: React.FC = () => {
           <button type="submit" className="submit-button">Submit</button>
         </form>
       )}
+    </div>
     </div>
   );
 };
