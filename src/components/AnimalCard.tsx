@@ -5,12 +5,12 @@ interface Animal {
   name: string;
   image: string;
   origin: string;
-  description: string; 
+  description: string;
 }
 
 interface AnimalCardProps {
   animal: Animal;
-  showPopup: (animal: Animal) => void; 
+  showPopup: (animal: Animal) => void;
 }
 
 const AnimalCard: React.FC<AnimalCardProps> = ({ animal, showPopup }) => {

@@ -25,7 +25,7 @@ const Dogs: React.FC<Dogs> = ({ animalType, searchQuery }) => {
   useEffect(() => {
     fetch(url)
       .then(response => response.json())
-      .then(data => setAnimals(data.animals || data)) 
+      .then(data => setAnimals(data.animals || data))
       .catch(error => console.error('Error fetching data:', error));
   }, [animalType]);
 

@@ -17,23 +17,23 @@ function App() {
   return (
     <>
       <div className="App">
-      <Router>
-      <Layout setAnimalType={setAnimalType} setSearchQuery={setSearchQuery}>
-        <Routes>
-          <Route path="/" element={<Home animalType={'animalType'} searchQuery={'searchQuery'} />} />
-          <Route path="/contantUs" element={<ContactUs />} />
-          <Route path="/aboutUs" element={<AboutUs />} />
-          <Route path="/birds" element={<Birds animalType={animalType} searchQuery={searchQuery} />} />
-          <Route path="/cats" element={<Cats animalType={animalType} searchQuery={searchQuery} />} />
-          <Route path="/dogs" element={<Dogs animalType={animalType} searchQuery={searchQuery} />} />
+        <Router>
+          <Layout setAnimalType={setAnimalType} setSearchQuery={setSearchQuery}>
+            <Routes>
+              <Route path="/" element={<Home animalType={'animalType'} searchQuery={'searchQuery'} />} />
+              <Route path="/contantUs" element={<ContactUs />} />
+              <Route path="/aboutUs" element={<AboutUs />} />
+              <Route path="/birds" element={<Birds animalType={animalType} searchQuery={searchQuery} />} />
+              <Route path="/cats" element={<Cats animalType={animalType} searchQuery={searchQuery} />} />
+              <Route path="/dogs" element={<Dogs animalType={animalType} searchQuery={searchQuery} />} />
 
-        </Routes>
-      </Layout>
-    </Router>
+            </Routes>
+          </Layout>
+        </Router>
       </div>
     </>
   )
-  
+
 }
 
 export default App
